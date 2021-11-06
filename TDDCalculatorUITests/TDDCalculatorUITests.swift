@@ -16,10 +16,108 @@ class TDDCalculatorUITests: XCTestCase {
     app.launch()
   }
   
-  override func tearDownWithError() throws {
+  /// The operations that can be performed
+  enum Operator: String {
+    case plus = "+", minus = "-", times = "X", divide = "÷"
   }
   
-  func testExample() throws {
+  /// Taps buttons on the calculator and returns the result of the calculation
+  /// - Parameters:
+  ///   - operand1: the first number
+  ///   - operatorType: the operation to be performed
+  ///   - operand2: the second number
+  /// - Returns: the result of the calculation
+  func calculate(_ operand1: Double, _ operatorType: Operator,  _ operand2: Double) -> Double {
+    //Turn the first operand into an array of digits
+    let operand1Digits = Array(String(format: "%.6f", operand1))
     
+    //Enter the first operand one digit at a time
+    for digit in operand1Digits {
+      if digit == "." { break } else {
+        //Enter the digit
+        app.buttons[String(digit)].tap()
+      }
+    }
+    //Enter the operator
+    app.buttons[operatorType.rawValue].tap()
+    
+    
+    //Turn the second operand into an array of digits
+    let operand2Digits = Array(String(format: "%.6f", operand2))
+    
+    //Enter the first operand one digit at a time
+    for digit in operand2Digits {
+      if digit == "." { break } else {
+        //Enter the digit
+        app.buttons[String(digit)].tap()
+      }
+    }
+    
+    //Calculate the answer
+    app.buttons["="].tap()
+    
+    //Return the answer expected for the calculation
+    switch operatorType {
+    case .plus:
+      return operand1 + operand2
+    case .minus:
+      return operand1 - operand2
+    case .times:
+      return operand1 * operand2
+    case .divide:
+      return operand1 / operand2
+    }
+  }
+  
+  /// Performs an addition calculation and checks the answer
+  func testAddition() throws {
+    XCTAssertTrue(app.staticTexts["0.000000"].exists, "Zero was not displayed on launch")
+    
+    //Single digit calculation
+    var answer = calculate(2, .plus, 2)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+    
+    //Multiple digit calculation
+    answer = calculate(12, .plus, 12)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+  }
+  
+  /// Performs a subtraction calculation and checks the answer
+  func testSubtraction() throws {
+    XCTAssertTrue(app.staticTexts["0.000000"].exists, "Zero was not displayed on launch")
+    
+    //Single digit calculation
+    var answer = calculate(3, .minus, 2)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+    
+    //Multiple digit calculation
+    answer = calculate(13, .minus, 12)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+  }
+  
+  /// Performs an multiplication calculation and checks the answer
+  func testMultiplication() throws {
+    XCTAssertTrue(app.staticTexts["0.000000"].exists, "Zero was not displayed on launch")
+    
+    //Single digit calculation
+    var answer = calculate(3, .times, 3)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+    
+    //Multiple digit calculation
+    answer = calculate(13, .times, 13)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+  }
+  
+  /// Performs an division calculation and checks the answer
+  func testDivision() throws {
+    XCTAssertTrue(app.staticTexts["0.000000"].exists, "Zero was not displayed on launch")
+    
+    //Single digit calculation
+    var answer = calculate(3, .divide, 3)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
+    
+    //Multiple digit calculation
+    answer = calculate(33, .divide, 11)
+    XCTAssertTrue(app.staticTexts[String(format: "%.6f", answer)].exists, "Answer was not displayed")
   }
 }
