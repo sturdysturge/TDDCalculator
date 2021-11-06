@@ -11,7 +11,19 @@
 		4125082C273717A100990E24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125082B273717A100990E24 /* ContentView.swift */; };
 		4125082E273717A300990E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4125082D273717A300990E24 /* Assets.xcassets */; };
 		41250831273717A300990E24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41250830273717A300990E24 /* Preview Assets.xcassets */; };
+		4125083E2737181300990E24 /* TDDCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125083D2737181300990E24 /* TDDCalculatorUITests.swift */; };
+		412508402737181300990E24 /* TDDCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125083F2737181300990E24 /* TDDCalculatorUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		412508412737181300990E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4125081E273717A100990E24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41250825273717A100990E24;
+			remoteInfo = TDDCalculator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		41250826273717A100990E24 /* TDDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +31,20 @@
 		4125082B273717A100990E24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4125082D273717A300990E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41250830273717A300990E24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4125083B2737181300990E24 /* TDDCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4125083D2737181300990E24 /* TDDCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculatorUITests.swift; sourceTree = "<group>"; };
+		4125083F2737181300990E24 /* TDDCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		41250823273717A100990E24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		412508382737181300990E24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				41250828273717A100990E24 /* TDDCalculator */,
+				4125083C2737181300990E24 /* TDDCalculatorUITests */,
 				41250827273717A100990E24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				41250826273717A100990E24 /* TDDCalculator.app */,
+				4125083B2737181300990E24 /* TDDCalculatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +91,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4125083C2737181300990E24 /* TDDCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4125083D2737181300990E24 /* TDDCalculatorUITests.swift */,
+				4125083F2737181300990E24 /* TDDCalculatorUITestsLaunchTests.swift */,
+			);
+			path = TDDCalculatorUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +120,24 @@
 			productReference = 41250826273717A100990E24 /* TDDCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4125083A2737181300990E24 /* TDDCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 412508432737181300990E24 /* Build configuration list for PBXNativeTarget "TDDCalculatorUITests" */;
+			buildPhases = (
+				412508372737181300990E24 /* Sources */,
+				412508382737181300990E24 /* Frameworks */,
+				412508392737181300990E24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				412508422737181300990E24 /* PBXTargetDependency */,
+			);
+			name = TDDCalculatorUITests;
+			productName = TDDCalculatorUITests;
+			productReference = 4125083B2737181300990E24 /* TDDCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +150,10 @@
 				TargetAttributes = {
 					41250825273717A100990E24 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					4125083A2737181300990E24 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 41250825273717A100990E24;
 					};
 				};
 			};
@@ -116,6 +171,7 @@
 			projectRoot = "";
 			targets = (
 				41250825273717A100990E24 /* TDDCalculator */,
+				4125083A2737181300990E24 /* TDDCalculatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +183,13 @@
 			files = (
 				41250831273717A300990E24 /* Preview Assets.xcassets in Resources */,
 				4125082E273717A300990E24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		412508392737181300990E24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +205,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		412508372737181300990E24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4125083E2737181300990E24 /* TDDCalculatorUITests.swift in Sources */,
+				412508402737181300990E24 /* TDDCalculatorUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		412508422737181300990E24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41250825273717A100990E24 /* TDDCalculator */;
+			targetProxy = 412508412737181300990E24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		41250832273717A300990E24 /* Debug */ = {
@@ -319,6 +399,50 @@
 			};
 			name = Release;
 		};
+		412508442737181300990E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3J2MVF9M9;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sturdysturge.TDDCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TDDCalculator;
+			};
+			name = Debug;
+		};
+		412508452737181300990E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3J2MVF9M9;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sturdysturge.TDDCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TDDCalculator;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +460,15 @@
 			buildConfigurations = (
 				41250835273717A300990E24 /* Debug */,
 				41250836273717A300990E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		412508432737181300990E24 /* Build configuration list for PBXNativeTarget "TDDCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				412508442737181300990E24 /* Debug */,
+				412508452737181300990E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
