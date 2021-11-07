@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import SwiftUI
 
 /// The operations that can be performed
-public enum Operator: String {
+
+enum Operator: String, CaseIterable {
   case plus = "+", minus = "-", times = "X", divide = "÷"
 }
 
@@ -61,6 +61,10 @@ class CalculatorViewModel: Calculatable {
     }
     //Remove operator after using it
     self.operatorType = nil
+    //Set operand1 as the answer for future calculations
+    self.operand1 = answer
+    //Set operand2 to zero
+    self.operand2 = 0
     //Return the answer
     return answer
   }

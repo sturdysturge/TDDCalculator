@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import SwiftUI
 
 /// The operations that can be performed
-public enum Operator: String {
+enum Operator: String, CaseIterable {
   case plus = "+", minus = "-", times = "X", divide = "÷"
 }
 

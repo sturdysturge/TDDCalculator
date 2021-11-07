@@ -14,6 +14,9 @@
 		4125083E2737181300990E24 /* TDDCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125083D2737181300990E24 /* TDDCalculatorUITests.swift */; };
 		4125084D273721B700990E24 /* TDDCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125084C273721B700990E24 /* TDDCalculatorTests.swift */; };
 		412508542737247F00990E24 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412508532737247F00990E24 /* CalculatorViewModel.swift */; };
+		41B3905E27375DC700F719AE /* TDD ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3905D27375DC700F719AE /* TDD ContentView.swift */; };
+		41B3906027375E1700F719AE /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3905F27375E1700F719AE /* DisplayView.swift */; };
+		41B3906227375E4800F719AE /* TDD DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3906127375E4800F719AE /* TDD DisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		4125084A273721B700990E24 /* TDDCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4125084C273721B700990E24 /* TDDCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculatorTests.swift; sourceTree = "<group>"; };
 		412508532737247F00990E24 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		41B3905D27375DC700F719AE /* TDD ContentView.swift */ = {isa = PBXFileReference; explicitFileType = text; path = "TDD ContentView.swift"; sourceTree = "<group>"; };
+		41B3905F27375E1700F719AE /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		41B3906127375E4800F719AE /* TDD DisplayView.swift */ = {isa = PBXFileReference; explicitFileType = text; path = "TDD DisplayView.swift"; sourceTree = "<group>"; };
 		41EF815D27374955008384DA /* TDDUITests Calculate.swift */ = {isa = PBXFileReference; explicitFileType = text; path = "TDDUITests Calculate.swift"; sourceTree = "<group>"; };
 		41EF815F27374A64008384DA /* TDDUITests.swift */ = {isa = PBXFileReference; explicitFileType = text; path = TDDUITests.swift; sourceTree = "<group>"; };
 		41EF816027374AB7008384DA /* TDDUnitCalculate.swift */ = {isa = PBXFileReference; explicitFileType = text; path = TDDUnitCalculate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				4125082D273717A300990E24 /* Assets.xcassets */,
 				4125082F273717A300990E24 /* Preview Content */,
 				412508532737247F00990E24 /* CalculatorViewModel.swift */,
+				41B3905F27375E1700F719AE /* DisplayView.swift */,
 				41EF815C27374926008384DA /* Gists */,
 			);
 			path = TDDCalculator;
@@ -147,6 +154,8 @@
 				41EF816527374BBA008384DA /* TDDCalculatorViewModelCalculate.swift */,
 				41EF816727374BFF008384DA /* TDDUnitTestsStart.swift */,
 				41EF816927374C49008384DA /* TDDUITestsStart.swift */,
+				41B3905D27375DC700F719AE /* TDD ContentView.swift */,
+				41B3906127375E4800F719AE /* TDD DisplayView.swift */,
 			);
 			path = Gists;
 			sourceTree = "<group>";
@@ -283,7 +292,10 @@
 			files = (
 				4125082C273717A100990E24 /* ContentView.swift in Sources */,
 				412508542737247F00990E24 /* CalculatorViewModel.swift in Sources */,
+				41B3905E27375DC700F719AE /* TDD ContentView.swift in Sources */,
+				41B3906027375E1700F719AE /* DisplayView.swift in Sources */,
 				4125082A273717A100990E24 /* TDDCalculatorApp.swift in Sources */,
+				41B3906227375E4800F719AE /* TDD DisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

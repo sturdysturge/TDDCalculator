@@ -26,6 +26,10 @@ func calculate(_ operand1: Double, _ operatorType: Operator, _ operand2: Double)
   }
   //Remove operator after using it
   self.operatorType = nil
+  //Set operand1 as the answer for future calculations
+  self.operand1 = answer
+  //Set operand2 to zero
+  self.operand2 = 0
   //Return the answer
   return answer
 }
