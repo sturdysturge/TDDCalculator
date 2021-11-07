@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-  static let background = Color(UIColor.systemBackground)
-}
-
-
 /// A rounded button style that works in both light and dark mode
 struct CalculatorButtonStyle: ButtonStyle {
   func makeBody(configuration: Self.Configuration) -> some View {
@@ -20,7 +15,7 @@ struct CalculatorButtonStyle: ButtonStyle {
         .foregroundColor(.primary)
       configuration.label
         .padding(5)
-        .foregroundColor(.background)
+        .foregroundColor(Color(UIColor.systemBackground))
     }
     .aspectRatio(1, contentMode: .fit)
   }
@@ -39,10 +34,8 @@ struct ContentView: View {
       answerShown = false
       value = 0
     }
-    
     //Add number as a new digit, shifting the existing digits to the left
     value = number + (value * 10)
-    
     //Set operand1 or operand2 depending on whether an operator has been chosen
     if viewModel.operatorType == nil {
       viewModel.operand1 = value
@@ -51,25 +44,20 @@ struct ContentView: View {
     }
   }
   
-  
-  
   var body: some View {
     VStack {
       DisplayView(value: value)
       
       //Identical columns are added until the horizontal space is filled
       LazyVGrid(columns: [gridItem]) {
-        
         //Number buttons 1 to 9
         ForEach(1...9, id: \.self) {
           number in Button("\(number)") {
             appendDigit(Double(number))
           }
         }
-        
         //Zero button
         Button("0") { appendDigit(0) }
-        
         //Operators
         ForEach(Operator.allCases, id: \.self) {
           operatorType in
@@ -78,7 +66,6 @@ struct ContentView: View {
             viewModel.operatorType = operatorType
           }
         }
-        
         //Equals button
         Button("=") {
           guard let operatorType = viewModel.operatorType else { return }
@@ -89,13 +76,5 @@ struct ContentView: View {
     }
     .padding(20)
     .buttonStyle(CalculatorButtonStyle())
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  
-  static var previews: some View {
-    ContentView()
-    ContentView().preferredColorScheme(.dark)
   }
 }

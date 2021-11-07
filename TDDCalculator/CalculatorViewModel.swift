@@ -13,9 +13,9 @@ enum Operator: String, CaseIterable {
   case plus = "+", minus = "-", times = "X", divide = "÷"
 }
 
-
 /// The requirements for the ObservableObject that stores data and performs calculations
 protocol Calculatable: ObservableObject {
+  
   /// Makes a calculation and returns the result
   /// - Parameters:
   ///   - operand1: the first number

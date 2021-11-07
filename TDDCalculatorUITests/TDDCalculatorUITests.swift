@@ -21,37 +21,39 @@ class TDDCalculatorUITests: XCTestCase {
     case plus = "+", minus = "-", times = "X", divide = "÷"
   }
   
-  /// Taps buttons on the calculator and returns the result of the calculation
+  
+  /// Taps numbers one at a time until a decimal point is found
+  /// - Parameter number: The number that should be typed
+  func typeNumber(_ number: Double) {
+    //Convert the number to a string
+    let numberString = String(format: "%.6f", number)
+    //Convert the string to an array of String.Element
+    let digits = Array(numberString)
+    
+    //Enter the first operand one digit at a time
+    for digit in digits {
+      if digit == "." { break } else {
+        //Enter the digit
+        app.buttons[String(digit)].tap()
+      }
+    }
+  }
+  
+  /// Takes two numbers and returns the result of the specified operation
   /// - Parameters:
   ///   - operand1: the first number
   ///   - operatorType: the operation to be performed
   ///   - operand2: the second number
   /// - Returns: the result of the calculation
   func calculate(_ operand1: Double, _ operatorType: Operator,  _ operand2: Double) -> Double {
-    //Turn the first operand into an array of digits
-    let operand1Digits = Array(String(format: "%.6f", operand1))
+    //Type the first number
+    typeNumber(operand1)
     
-    //Enter the first operand one digit at a time
-    for digit in operand1Digits {
-      if digit == "." { break } else {
-        //Enter the digit
-        app.buttons[String(digit)].tap()
-      }
-    }
     //Enter the operator
     app.buttons[operatorType.rawValue].tap()
     
-    
-    //Turn the second operand into an array of digits
-    let operand2Digits = Array(String(format: "%.6f", operand2))
-    
-    //Enter the first operand one digit at a time
-    for digit in operand2Digits {
-      if digit == "." { break } else {
-        //Enter the digit
-        app.buttons[String(digit)].tap()
-      }
-    }
+    //Type the second number
+    typeNumber(operand2)
     
     //Calculate the answer
     app.buttons["="].tap()
